@@ -1,0 +1,32 @@
+version: '2'
+services:
+  jeffrey_api_v2:
+    restart: always
+    image: jffr/api:latest
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./api/config.yml:/config.yml
+    environment:
+      CONFIG: /config.yml
+      NODE_ENV: production
+  redis:
+    restart: always
+    image: redis:3.0
+  postgres:
+    restart: always
+    image: postgres:10.1
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+  gateway:
+    restart: always
+    build: ./gateway
+    network_mode: "host"
+    environment:
+      - "LETSENCRYPT_CONTACT_EMAIL=william@reptilians.io"
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
