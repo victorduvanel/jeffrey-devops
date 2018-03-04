@@ -14,7 +14,6 @@ RUN set -x \
 
 EXPOSE 80 443
 
-COPY ["./conf", "/etc/nginx"]
 COPY ["./start.sh", "/"]
 
 CMD ["/start.sh"]

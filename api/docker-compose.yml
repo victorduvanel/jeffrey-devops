@@ -7,10 +7,12 @@ services:
       - postgres
       - redis
     volumes:
-      - ./api/config.yml:/config.yml
+      - ./config.yml:/config.yml
     environment:
       CONFIG: /config.yml
       NODE_ENV: production
+    ports:
+      - "127.0.0.1:3000:80"
   redis:
     restart: always
     image: redis:3.0
@@ -19,14 +21,3 @@ services:
     image: postgres:10.1
     volumes:
       - ./pg_data:/var/lib/postgresql/data
-  gateway:
-    restart: always
-    build: ./gateway
-    network_mode: "host"
-    environment:
-      - "LETSENCRYPT_CONTACT_EMAIL=william@reptilians.io"
-    volumes:
-      - ./letsencrypt:/etc/letsencrypt
-    ports:
-      - "80:80"
-      - "443:443"

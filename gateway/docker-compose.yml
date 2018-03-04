@@ -1,0 +1,14 @@
+version: '2'
+services:
+  gateway:
+    restart: always
+    build: .
+    network_mode: "host"
+    environment:
+      - "LETSENCRYPT_CONTACT_EMAIL=william@reptilians.io"
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
+      - ./conf:/etc/nginx
+    ports:
+      - "80:80"
+      - "443:443"
