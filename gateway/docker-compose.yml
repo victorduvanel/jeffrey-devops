@@ -2,7 +2,7 @@ version: '2'
 services:
   gateway:
     restart: always
-    build: .
+    image: "eu.gcr.io/jeffrey-197808/gateway:latest"
     network_mode: "host"
     environment:
       - "LETSENCRYPT_CONTACT_EMAIL=william@reptilians.io"

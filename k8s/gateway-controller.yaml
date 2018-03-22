@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    name: gateway
+  name: gateway-controller
+spec:
+  replicas: 1
+  selector:
+    name: gateway
+  template:
+    metadata:
+      labels:
+        name: gateway
+    spec:
+      containers:
+      - image: eu.gcr.io/jeffrey-197808/gateway:1.6
+        name: gateway
+        env:
+        - name: LETSENCRYPT_CONTACT_EMAIL
+          value: "william@reptilians.io"
+        ports:
+        - containerPort: 80
+          name: http-server
+        - containerPort: 443
+          name: https-server

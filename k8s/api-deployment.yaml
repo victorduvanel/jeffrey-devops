@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api
+        tier: backend
+    spec:
+      containers:
+        - name: api
+          image: eu.gcr.io/jeffrey-197808/api:0.5
+          ports:
+            - containerPort: 80
+              name: http-server
+          # The following environment variables will contain the database host,
+          # user and password to connect to the PostgreSQL instance.
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: CONFIG
+              value: /config/config.yml
+          volumeMounts:
+            - name: api-config
+              mountPath: /config
+              readOnly: true
+        # [START proxy_container]
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+                    "-instances=jeffrey-197808:europe-west1:api-production=tcp:5432",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+        # [END proxy_container]
+      # [START volumes]
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
+        - name: api-config
+          secret:
+            secretName: api-config
+      # [END volumes]

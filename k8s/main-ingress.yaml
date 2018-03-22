@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: main-ingress
+  labels:
+    name: main-ingress
+spec:
+  type: LoadBalancer
+  loadBalancerIP: "35.205.207.219"
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http-server
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: https-server
+  selector:
+    name: gateway

@@ -1,0 +1,33 @@
+environment: production
+protocol: https
+host: jffr.se
+webappProtocol: https
+webappHost: jffr.se
+mailgun:
+  apiBaseURL: https://api.mailgun.net/v3/prestine.io
+  apiKey: key-4uxc32rva7pgw0ia1blpcmgjjznh3y82
+db:
+  client: 'pg'
+  connection:
+    user: proxyuser
+    database: jeffrey
+    host: 127.0.0.1
+    password: MswMfPSs
+    port: 5432
+    max: 10
+    idleTimeoutMillis: 30000
+  debug: false
+stripe:
+  secretKey: sk_test_QiJITpQTx1S0NkFv3DiySXi3
+twilio:
+  accountSid: AC410a7b5e527762412690b23e1be2d6bb
+  authToken: 6801847ac16da1a775cf78d6f9713c20
+  twiMlAppSid: APad1bdd10f77fc6eda6fa083d3134dc40
+  apiKey: SK496bc4825277985ca583427ec80f8b79
+  apiSecret: XB12YR7nWAHeQFaRhGikcxzp1QvwcoN0
+  pushCredentialSid: CRdf35b76c52e777b665bab285c03e31ef
+redis:
+  host: redis-master
+  port: 6379
+apolloEngine:
+  apiKey: service:williamriancho-7500:PkADMQDOBcvdcgcjLHsXsQ

@@ -12,8 +12,9 @@ RUN set -x \
       && ln -sf /dev/stdout /var/log/nginx/access.log \
       && ln -sf /dev/stderr /var/log/nginx/error.log
 
+ADD ./conf /etc/nginx
+ADD ./letsencrypt /etc/letsencrypt
+
 EXPOSE 80 443
 
-COPY ["./start.sh", "/"]
-
-CMD ["/start.sh"]
+CMD ["nginx"]
