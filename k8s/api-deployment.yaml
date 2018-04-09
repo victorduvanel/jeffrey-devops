@@ -12,10 +12,10 @@ spec:
     spec:
       containers:
         - name: api
-          image: eu.gcr.io/jeffrey-197808/api:0.8
+          image: eu.gcr.io/jeffrey-197808/api:0.9
           ports:
             - containerPort: 80
-              name: http-server
+              name: http
           # The following environment variables will contain the database host,
           # user and password to connect to the PostgreSQL instance.
           env:

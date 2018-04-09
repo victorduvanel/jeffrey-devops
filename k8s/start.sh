@@ -11,7 +11,7 @@ kubectl apply -f redis-master-deployment.yaml
 kubectl apply -f redis-master-service.yaml
 kubectl apply -f api-deployment.yaml
 kubectl apply -f api-service.yaml
-kubectl apply -f gateway-controller.yaml
+kubectl apply -f gateway-deployment.yaml
 kubectl apply -f gateway-service.yaml
 kubectl apply -f main-ingress.yaml
 

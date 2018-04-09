@@ -3,7 +3,8 @@ kind: Service
 metadata:
   name: gateway
   labels:
-    name: gateway
+    app: gateway
+    tier: backend
 spec:
   type: NodePort
   externalTrafficPolicy: Local
@@ -11,10 +12,11 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
-      name: http-server
+      name: http
     - port: 443
       targetPort: 443
       protocol: TCP
-      name: https-server
+      name: https
   selector:
-    name: gateway
+    app: gateway
+    tier: backend
