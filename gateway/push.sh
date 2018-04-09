@@ -1,3 +1,5 @@
 #!/bin/bash
 
-gcloud docker -- push eu.gcr.io/jeffrey-197808/gateway:1.6
+VERSION="$(head -1 VERSION)"
+
+gcloud docker -- push "eu.gcr.io/jeffrey-197808/gateway:$VERSION"

@@ -12,21 +12,31 @@ spec:
     spec:
       containers:
         - name: api
-          image: eu.gcr.io/jeffrey-197808/api:0.5
+          image: eu.gcr.io/jeffrey-197808/api:0.8
           ports:
             - containerPort: 80
               name: http-server
           # The following environment variables will contain the database host,
           # user and password to connect to the PostgreSQL instance.
           env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/google/key.json
             - name: NODE_ENV
               value: production
             - name: CONFIG
               value: /config/config.yml
           volumeMounts:
+            - name: google-cloud-key
+              mountPath: /var/secrets/google
             - name: api-config
               mountPath: /config
               readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
         # [START proxy_container]
         - name: cloudsql-proxy
           image: gcr.io/cloudsql-docker/gce-proxy:1.11
@@ -40,6 +50,9 @@ spec:
         # [END proxy_container]
       # [START volumes]
       volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: jeffrey-api-key
         - name: cloudsql-instance-credentials
           secret:
             secretName: cloudsql-instance-credentials

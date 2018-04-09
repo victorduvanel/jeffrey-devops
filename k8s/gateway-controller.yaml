@@ -14,7 +14,7 @@ spec:
         name: gateway
     spec:
       containers:
-      - image: eu.gcr.io/jeffrey-197808/gateway:1.6
+      - image: eu.gcr.io/jeffrey-197808/gateway:1.7
         name: gateway
         env:
         - name: LETSENCRYPT_CONTACT_EMAIL
