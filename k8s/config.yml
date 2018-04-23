@@ -20,7 +20,8 @@ db:
     idleTimeoutMillis: 30000
   debug: false
 stripe:
-  secretKey: sk_test_QiJITpQTx1S0NkFv3DiySXi3
+  secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
+  webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
 twilio:
   accountSid: AC410a7b5e527762412690b23e1be2d6bb
   authToken: 6801847ac16da1a775cf78d6f9713c20
