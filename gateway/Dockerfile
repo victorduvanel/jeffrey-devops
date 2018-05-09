@@ -1,6 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER William Riancho <william@reptilians.io>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN set -x \
       && mkdir -p /certbot-webroot/.well-known \
       && apt-get update \
