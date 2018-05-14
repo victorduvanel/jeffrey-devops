@@ -1,0 +1,58 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: drone-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: drone-server
+        tier: backend
+    spec:
+      containers:
+        - name: drone-server
+          image: drone/drone:0.8
+          ports:
+            - containerPort: 8000
+              name: http
+            - containerPort: 9000
+              name: drone-broker
+          env:
+            - name: DRONE_DEBUG
+              value: "true"
+            - name: DRONE_HOST
+              value: https://drone.jffr.se
+            - name: DRONE_OPEN
+              value: "true"
+            - name: DRONE_SECRET
+              value: ZrLdDiOJlQyWkYOWIlJ4kxoTlEbaszllBFZ1mavAuY0ZJiV423PILTWUvAbz
+            - name: DRONE_ADMIN
+              value: appleboy
+            - name: DRONE_GITHUB
+              value: "true"
+            - name: DRONE_GITHUB_CLIENT
+              value: 85bb639e93ae4f9528aa
+            - name: DRONE_GITHUB_SECRET
+              value: f7ac0f24eac2a0b74263accbc7364cdd20cb9597
+            - name: DRONE_ORGS
+              value: jeffreytech
+            - name: DRONE_DATABASE_DRIVER
+              value: postgres
+            - name: DRONE_DATABASE_DATASOURCE
+              value: postgres://proxyuser:MswMfPSs@127.0.0.1:5432/drone?sslmode=disable
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/google/key.json
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+                    "-instances=jeffrey-197808:europe-west1:api-production=tcp:5432",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials

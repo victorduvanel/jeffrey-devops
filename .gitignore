@@ -1,3 +1,5 @@
+.DS_Store
+
 pg_data
 letsencrypt
 sql-client.json

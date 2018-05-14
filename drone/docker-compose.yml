@@ -1,0 +1,47 @@
+version: '2'
+services:
+  drone-server:
+    image: drone/drone:0.8
+    ports:
+      - 8080:80
+      - 8000:8000
+      - 9000:9000
+    volumes:
+      - ./:/var/lib/drone/
+    restart: always
+    depends_on:
+      - cloudsql-proxy
+    environment:
+      - DRONE_HOST=http://drone.jffr.se
+      - DRONE_OPEN=true
+      - DRONE_SECRET=ZrLdDiOJlQyWkYOWIlJ4kxoTlEbaszllBFZ1mavAuY0ZJiV423PILTWUvAbz
+      - DRONE_ADMIN=appleboy
+      # GitHub Config
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=85bb639e93ae4f9528aa
+      - DRONE_GITHUB_SECRET=f7ac0f24eac2a0b74263accbc7364cdd20cb9597
+      # Database Config
+      - DRONE_DATABASE_DRIVER=postgres
+      - DRONE_DATABASE_DATASOURCE=postgres://proxyuser:MswMfPSs@cloudsql-proxy:5432/drone?sslmode=disable
+  drone-agent:
+    image: drone/agent:0.8
+    command: agent
+    restart: always
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=drone-server:9000
+      - DRONE_SECRET=ZrLdDiOJlQyWkYOWIlJ4kxoTlEbaszllBFZ1mavAuY0ZJiV423PILTWUvAbz
+      - DRONE_MAX_PROCS=3
+
+  cloudsql-proxy:
+    image: gcr.io/cloudsql-docker/gce-proxy:1.11
+    ports:
+      - 5432:5432
+    command: ["/cloud_sql_proxy",
+              "-instances=jeffrey-197808:europe-west1:api-production=tcp:0.0.0.0:5432",
+              "-credential_file=/secrets/cloudsql/credentials.json"]
+    volumes:
+      - ./sql-client.json:/secrets/cloudsql/credentials.json
