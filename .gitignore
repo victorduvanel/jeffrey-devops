@@ -1,2 +1,6 @@
+.DS_Store
+
 pg_data
 letsencrypt
+sql-client.json
+k8s/jeffrey-api.json
