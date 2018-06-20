@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: eu.gcr.io/jeffrey-197808/gateway:1.9
+          image: eu.gcr.io/jeffrey-197808/gateway:1.10
           ports:
             - containerPort: 80
               name: http
