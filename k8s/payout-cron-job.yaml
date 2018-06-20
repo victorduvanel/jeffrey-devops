@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: payout-cronworker
+spec:
+  schedule: "00 15 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: payout-cronworker
+            image: node:10.4.1
+            command: ["curl", "-X", "POST", "https://jffr.se/process-payout"]
+          restartPolicy: OnFailure
