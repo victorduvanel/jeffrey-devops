@@ -1,4 +1,3 @@
-environment: production
 protocol: https
 host: jffr.se
 webappProtocol: https
@@ -23,12 +22,8 @@ stripe:
   secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
   webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
 twilio:
-  accountSid: AC410a7b5e527762412690b23e1be2d6bb
-  authToken: 6801847ac16da1a775cf78d6f9713c20
-  twiMlAppSid: APad1bdd10f77fc6eda6fa083d3134dc40
-  apiKey: SK496bc4825277985ca583427ec80f8b79
-  apiSecret: XB12YR7nWAHeQFaRhGikcxzp1QvwcoN0
-  pushCredentialSid: CRdf35b76c52e777b665bab285c03e31ef
+  accountSid: AC03e87acd86d29f08a6e94b147f5cc9ed
+  authToken: d9b0b410a2d354167db13baa8d093872
 redis:
   host: redis-master
   port: 6379
