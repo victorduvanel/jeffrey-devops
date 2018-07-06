@@ -23,6 +23,8 @@ stripe:
   webhookSecret: whsec_YoBtEj4IEwUTjzW60eVUbiUbpAhcb5Kp
   # secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
   # webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
+raven:
+  dsn: https://6deeafef38cc41caa569736a25327d29@sentry.io/1238615
 twilio:
   accountSid: AC03e87acd86d29f08a6e94b147f5cc9ed
   authToken: d9b0b410a2d354167db13baa8d093872
