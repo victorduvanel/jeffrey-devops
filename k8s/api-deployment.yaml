@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: eu.gcr.io/jeffrey-197808/api:0.45
+          image: eu.gcr.io/jeffrey-197808/api:0.46
           ports:
             - containerPort: 80
               name: http
