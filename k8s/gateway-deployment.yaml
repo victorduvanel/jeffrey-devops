@@ -4,6 +4,11 @@ metadata:
   name: gateway
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
   template:
     metadata:
       labels:
@@ -12,7 +17,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: eu.gcr.io/jeffrey-197808/gateway:1.10
+          image: eu.gcr.io/jeffrey-197808/gateway:1.11
           ports:
             - containerPort: 80
               name: http
