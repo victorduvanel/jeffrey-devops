@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: el-chacouch-landing-page
-          image: eu.gcr.io/jeffrey-197808/el-chacouch-landing-page:1.0
+          image: eu.gcr.io/jeffrey-197808/el-chacouch-landing-page:1.1
           ports:
             - containerPort: 80
               name: http
