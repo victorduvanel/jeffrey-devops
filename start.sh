@@ -4,7 +4,7 @@ gcloud config set project jeffrey-197808
 gcloud config set compute/zone europe-west1-b
 gcloud config set container/use_v1_api false
 
-kubectl create secret generic api-config --from-file=config.yml=./config/jeffrey-config.yml
+kubectl create secret generic jeffrey-api-config --from-file=config.yml=./config/jeffrey-config.yml
 kubectl create secret generic jeffrey-api-key --from-file=key.json=./config/jeffrey-api.json
 
 kubectl create secret generic elchaouch-api-config --from-file=config.yml=./config/elchaouch-config.yml
