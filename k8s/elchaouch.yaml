@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elchaouch-api
+  labels:
+    app: elchaouch-api
+    tier: backend
+spec:
+  type: NodePort
+  externalTrafficPolicy: Local
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: elchaouch-api
+    tier: backend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: elchaouch-api
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: elchaouch-api
+        tier: backend
+    spec:
+      containers:
+        - name: api
+          image: eu.gcr.io/jeffrey-197808/api:0.46
+          ports:
+            - containerPort: 80
+              name: http
+          # The following environment variables will contain the database host,
+          # user and password to connect to the PostgreSQL instance.
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/google/key.json
+            - name: NODE_ENV
+              value: production
+            - name: CONFIG
+              value: /config/config.yml
+          volumeMounts:
+            - name: google-cloud-key
+              mountPath: /var/secrets/google
+            - name: api-config
+              mountPath: /config
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+        # [START proxy_container]
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+                    "-instances=jeffrey-197808:europe-west1:api-production=tcp:5432",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+        # [END proxy_container]
+      # [START volumes]
+      volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: elchaouch-api-key
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
+        - name: api-config
+          secret:
+            secretName: elchaouch-api-config
+      # [END volumes]
