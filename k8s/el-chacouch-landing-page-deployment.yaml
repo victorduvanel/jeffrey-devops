@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: el-chacouch-landing-page
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: el-chacouch-landing-page
+        tier: backend
+    spec:
+      containers:
+        - name: el-chacouch-landing-page
+          image: eu.gcr.io/jeffrey-197808/el-chacouch-landing-page:1.0
+          ports:
+            - containerPort: 80
+              name: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
