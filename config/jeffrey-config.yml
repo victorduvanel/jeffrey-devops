@@ -2,6 +2,8 @@ protocol: https
 host: jffr.se
 webappProtocol: https
 webappHost: jffr.se
+app:
+  name: Jeffrey
 google:
   projectId: jeffrey-197808
 mailgun:
@@ -18,13 +20,20 @@ db:
     max: 10
     idleTimeoutMillis: 30000
   debug: false
-stripe:
-  secretKey: sk_test_UPFDKPIe8wuCwKdCwikNMWzs
-  webhookSecret: whsec_YoBtEj4IEwUTjzW60eVUbiUbpAhcb5Kp
-  # secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
-  # webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
 raven:
   dsn: https://6deeafef38cc41caa569736a25327d29@sentry.io/1238615
+stripe:
+  secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
+  webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
+paypal:
+  clientId: ARhA2IWOJfLJrtNzNQXLoK7KqGpAl7sCPYel9RczCxFFXGAQSOwmyKFtctmcEkiwEOfQHJLxp-VzbztY
+  clientSecret: EE5y_JaJZ9snRjk9jLEeOlT1gCBc7aO8_cUd2Ph8q7GxhjNJkwTW3BkWeDlhY0clJV65fINA5oZi4B6i
+braintree:
+  merchantId: w7hjbfnz6c4j53py
+  publicKey: 33y3r2w28bwxszks
+  privateKey: f3e5f694218272704dd3346a5ff4c516
+  environment: Sandbox
+  # environment: Production
 twilio:
   accountSid: AC03e87acd86d29f08a6e94b147f5cc9ed
   authToken: d9b0b410a2d354167db13baa8d093872
