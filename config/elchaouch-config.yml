@@ -1,0 +1,99 @@
+protocol: https
+host: jffr.se
+webappProtocol: https
+webappHost: api.elchaouch.app
+google:
+  projectId: jeffrey-197808
+mailgun:
+  apiBaseURL: https://api.mailgun.net/v3/prestine.io
+  apiKey: key-4uxc32rva7pgw0ia1blpcmgjjznh3y82
+db:
+  client: 'pg'
+  connection:
+    user: proxyuser
+    database: elchaouch
+    host: 127.0.0.1
+    password: MswMfPSs
+    port: 5432
+    max: 10
+    idleTimeoutMillis: 30000
+  debug: false
+stripe:
+  secretKey: sk_test_UPFDKPIe8wuCwKdCwikNMWzs
+  webhookSecret: whsec_YoBtEj4IEwUTjzW60eVUbiUbpAhcb5Kp
+  # secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
+  # webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
+raven:
+  dsn: https://6deeafef38cc41caa569736a25327d29@sentry.io/1238615
+twilio:
+  accountSid: AC03e87acd86d29f08a6e94b147f5cc9ed
+  authToken: d9b0b410a2d354167db13baa8d093872
+redis:
+  host: redis-master
+  port: 6379
+apolloEngine:
+  apiKey: service:williamriancho-7500:PkADMQDOBcvdcgcjLHsXsQ
+apn:
+  production: false
+  cert: |
+    -----BEGIN CERTIFICATE-----
+    MIIFejCCBGKgAwIBAgIIPITL/ulwwCQwDQYJKoZIhvcNAQEFBQAwgZYxCzAJBgNV
+    BAYTAlVTMRMwEQYDVQQKDApBcHBsZSBJbmMuMSwwKgYDVQQLDCNBcHBsZSBXb3Js
+    ZHdpZGUgRGV2ZWxvcGVyIFJlbGF0aW9uczFEMEIGA1UEAww7QXBwbGUgV29ybGR3
+    aWRlIERldmVsb3BlciBSZWxhdGlvbnMgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkw
+    HhcNMTgwNDA0MDc1MzU1WhcNMTkwNDA0MDc1MzU1WjB6MRswGQYKCZImiZPyLGQB
+    AQwLc2UuamZmci5pb3MxOTA3BgNVBAMMMEFwcGxlIERldmVsb3BtZW50IElPUyBQ
+    dXNoIFNlcnZpY2VzOiBzZS5qZmZyLmlvczETMBEGA1UECwwKMllRTFQ1Q05XOTEL
+    MAkGA1UEBhMCVVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC/nk3x
+    Gz3/9VZp1Jcwfv4PTIfN8io5rFdOUMTgzoesrvkPfl0BSN7XusjuVfe0trFI8seE
+    4jmoA9vy13w0pxVhekHMuskGZBV5luWL5wvjk/XzxPLol1ZcEXtOprQ+ycXOGUJE
+    O++jTWOKi6/xfgU8d014bc6Arwd73xFXl4Fgm4j30EntBKAHogVo3ZSRYURxOQL5
+    sy+3XgAm75Zeiyfkgu0ioIvchbi6ZDgLr5YXTyGPLGYrD98tcZteALBHHrHhpgTT
+    g8R+tAttFYRHXBNmpYM+RQS8nXL4Vv0myd5DArB7nC6eWHo0UnHf6amrvsi8iS/w
+    TFmfimEDe1q2rBLRAgMBAAGjggHlMIIB4TAdBgNVHQ4EFgQUy1cZrv32Zurc+BEL
+    ugTtBr6bx0kwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBSIJxcJqbYYYIvs67r2R1nF
+    UlSjtzCCAQ8GA1UdIASCAQYwggECMIH/BgkqhkiG92NkBQEwgfEwgcMGCCsGAQUF
+    BwICMIG2DIGzUmVsaWFuY2Ugb24gdGhpcyBjZXJ0aWZpY2F0ZSBieSBhbnkgcGFy
+    dHkgYXNzdW1lcyBhY2NlcHRhbmNlIG9mIHRoZSB0aGVuIGFwcGxpY2FibGUgc3Rh
+    bmRhcmQgdGVybXMgYW5kIGNvbmRpdGlvbnMgb2YgdXNlLCBjZXJ0aWZpY2F0ZSBw
+    b2xpY3kgYW5kIGNlcnRpZmljYXRpb24gcHJhY3RpY2Ugc3RhdGVtZW50cy4wKQYI
+    KwYBBQUHAgEWHWh0dHA6Ly93d3cuYXBwbGUuY29tL2FwcGxlY2EvME0GA1UdHwRG
+    MEQwQqBAoD6GPGh0dHA6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2NlcnRpZmljYXRp
+    b25hdXRob3JpdHkvd3dkcmNhLmNybDALBgNVHQ8EBAMCB4AwEwYDVR0lBAwwCgYI
+    KwYBBQUHAwIwEAYKKoZIhvdjZAYDAQQCBQAwDQYJKoZIhvcNAQEFBQADggEBAH3S
+    zjd+bKpQtJFa+VjhunCTTR+2dNEtmipl9fJuj0joFWSrIIxCWgmblvrxfptyy0Lv
+    s+hWxWblVDiT1664HfSJ9C4sHx8xg8XpLPZtocQ2UkZ614/Ckt8cNP869Km8OATy
+    9BHtpQryiU/TQAtZQJ/WDuQTicCO3ZBBUPEg1KSzrgj0RgcU/bnNQkceaD8Pvbl4
+    bjmwXmxv85O6cmdAVWCjgVjVtCZwCh/eAU60V5JLbQ/iBUYknmIiTFXl05i112YU
+    eIPMeVs//10kekK/gBU/2f8cMlT6TYD9SIbQ08XI6MJX3djdCtHChOboaaqK1Qgd
+    iu5B6MogR0mneLmjRUc=
+    -----END CERTIFICATE-----
+  key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/nk3xGz3/9VZp
+    1Jcwfv4PTIfN8io5rFdOUMTgzoesrvkPfl0BSN7XusjuVfe0trFI8seE4jmoA9vy
+    13w0pxVhekHMuskGZBV5luWL5wvjk/XzxPLol1ZcEXtOprQ+ycXOGUJEO++jTWOK
+    i6/xfgU8d014bc6Arwd73xFXl4Fgm4j30EntBKAHogVo3ZSRYURxOQL5sy+3XgAm
+    75Zeiyfkgu0ioIvchbi6ZDgLr5YXTyGPLGYrD98tcZteALBHHrHhpgTTg8R+tAtt
+    FYRHXBNmpYM+RQS8nXL4Vv0myd5DArB7nC6eWHo0UnHf6amrvsi8iS/wTFmfimED
+    e1q2rBLRAgMBAAECggEBAIVhuVlyoBayfUNPoyozy790gze9MN1SdLdkC5d8y/5N
+    EbtSN4U0Z0H9l+4nUzSs0v03WeDK5F1qykjg7GluQLjItFLBVjsnobcwbXqUCreQ
+    f+z+lCOJbKjL1mxqKB9orlMHTBRZMDcZIIgJMiDEmvp7BScmME9tBqWYIec54+oN
+    RaANU7O5x+rVoB2ldpQGzvrXAdNuh98ZtCus2krDLMtTFOboeV8ZsAV8w0tcm3hz
+    q2WJQ6YGx0PpcsGzMfrv20En7praDFOjjflxDG+g6qN3BZZnxqItJjGeqsQeUBJz
+    63XrO4eSNrLKLXdqMCEYGsEwugXf2COUFhXB8D8pGu0CgYEA5Z8AdBAUA/H0F6TY
+    5qr0jqrYSzwYJGj2e/sOYVKzmMRr3AKD1exoOIhO8uvEwDoxP8Tws4cEuhKFG4St
+    EiEVwr4YtMGkdRVsW5OndA61r9kITVddLykMJzZ30VEMFH9w+Z2NNMYgxheer0yB
+    E+xpzuhv1YVgEdhTWyJuJoF/bNcCgYEA1aGrNZCLjmfQlM67vij4ujuJ9FEC/lhm
+    s3nTeE9qW6KeblSF9k0HHAJP2gwUnYzOlA47Zjxkog6UZzrGJhApUuL/5jwDMi0S
+    otdo2zzKFsh0ZAn4lzEEIyFCmkv5SEOd7+T2bYlUbabRZkyiwLQOhZpeakdP19Ec
+    2hYX3EtYIJcCgYEAm8/8J8WtP0wUnWKwCD5jOtg1cz/xBevvrgubI3FSC0zl/+H5
+    AdWslwfvwqk31lTmjGYgC0KIc5cTmau7IT0wHfiOnUF1TjneUHnuPDOrGAtGteyd
+    f93zsDwmq/O6JcKgr9E4O2JiZOksNbnNMO7QkaVqFdKucQ2A6qt/YUOoavsCgYB4
+    6zxEYl+LqFlYkTeVKA25I9AvGNev7YucFN3MoG7cFUzFuFPnGKxofyqBigr1LmkT
+    Rob6lD6Ft+jqEUts6gLp5pDf2aIZeYet4m14go0Enku7ACXUNitYUxAm08/yxksU
+    KS4OzAec1Sp7U+9fUctSdhDw6RJZXwSMsKqqx37HWwKBgAp6BnFj9HSHCCOfnz9B
+    QeG7hn2oQulKVWqKlJNC7HOshrzDQUGavfnezxkjWD6vF4mUYRyMIjYGhEoYIlnf
+    E2eAas0bjxy4mtfQ5kEgY8CSUlIMgpLSfVD8rjIrHfF4SwUDso5r732CojPNUI0f
+    lcuFm4Dl70T9OMYVXick7a44
+    -----END PRIVATE KEY-----
