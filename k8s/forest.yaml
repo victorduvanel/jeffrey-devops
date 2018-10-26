@@ -44,11 +44,9 @@ spec:
           # user and password to connect to the PostgreSQL instance.
           env:
             - name: FOREST_ENV_SECRET
-              value: 27fb8b9bf9c26d725e76218c76b28e6ed6cc1113f221203953b5173e020c44cc
-            # - name: FOREST_ENV_SECRET
-            #   value: f9dd7eb15e521cba87840f5a08e3cae95541c3cebf43a47480e489a76c5aa43f
+              value: a5eec441a9948b783803cdca9914f32355f5310ba92364c75579ab2aebec62ab
             - name: FOREST_AUTH_SECRET
-              value: slz65fzly0Kk9JIAHIEAmb0OFldgDhP6
+              value: 7ByottsyDFLsL3DbKjoI6oLE5at0aomw
             - name: DATABASE_URL
               value: postgres://proxyuser:MswMfPSs@127.0.0.1:5432/jeffrey
             - name: PORT
