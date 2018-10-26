@@ -40,7 +40,7 @@ spec:
       volumes:
         - name: rocket-chat-persistent-storage
           persistentVolumeClaim:
-          claimName: rocket-chat-disk
+            claimName: rocket-chat-disk
 ---
 apiVersion: v1
 kind: Service
