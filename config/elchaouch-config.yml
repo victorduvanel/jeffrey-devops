@@ -22,6 +22,8 @@ db:
   debug: false
 raven:
   dsn: https://6deeafef38cc41caa569736a25327d29@sentry.io/1238615
+apple:
+  sharedSecret: bbe075053b99438ba7d5bd6c6f100575
 stripe:
   secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
   webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
