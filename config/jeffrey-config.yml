@@ -108,3 +108,44 @@ apn:
     E2eAas0bjxy4mtfQ5kEgY8CSUlIMgpLSfVD8rjIrHfF4SwUDso5r732CojPNUI0f
     lcuFm4Dl70T9OMYVXick7a44
     -----END PRIVATE KEY-----
+firebase:
+  databaseURL: https://jeffrey-197808.firebaseio.com
+  serviceAccount:
+    type: service_account
+    project_id: jeffrey-197808
+    private_key_id: 4794d6cc40f824fd5a8738a65b8404008a59fb5f
+    private_key: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDIRyTYQMNahK5p
+      myHEaprNit99WrVZ1OteGFGbT2awJc5271xqWBY3ro4+Goedyb4jqqeLAHpVTkNg
+      07BiHlcTtGdkeGB82Aw6xIxKIf+H7avVI8majUMxjRo4XmffZsSOdXC8rRud083l
+      HhiUV+yk2LnrwlKar6VyC0jo0qcrspz7V4Xps902YoFitItsZegDhEHSSoU6BlHN
+      o+G4RJlwupxRHEwS0queLNdloEoGwrhdUusApMmSf2KYPxaqUMrYy9X6cQnj+ODn
+      kNCfGx2Nwm0YFFeZkK30/5GYZGkagfec0H1dspN2diBbmO9DEQephCZprjNW/mrd
+      YNNxpYOLAgMBAAECggEAA3PlM4yLnEwM8l7NdQ8+GPdhGqOi3GgadgD8Uy2faxT+
+      cLgireX+iA+MfeSY3ERbRfkjXKGcT6EtnIXkag9KLVmfA1vnP0US55Eg4VxMWqG4
+      edBdTDqi4xVNfkBJESW6k2wnOTwmGDv2YOdPwYBHNkuoNON2PMV0wuO6lOJLeyot
+      eX3aLq/aQRXq1AnCqSB/UIS9/y3Z9z7E7Cf+hkiaY5/MGPUY479XiGXc7lkwuJnm
+      uHznWSHXU0SvwVJUu+F6s7/vd7UjA7y9KHaVxvT60qT/k1ZbwM1tZAkbfhJvJ7B2
+      ZOKC47GMtkOmAIxXVpsTZtlXKXrKhTLJzjN7Ge/PpQKBgQDwNRMWwR0HxOT/ET1x
+      A+YdLKG2YzpIdqOLK4yjN0G1qb3I3T4cqqGPTuFK8UzuzwAtOBvNYVessOja2vLG
+      En6nzK9pQHW/zylWxKWaBAoUIdBD98jSqL32qEIaE1xBA1qobsmPTHiXEeEn7pwA
+      6l+8KMjNQIka+i23w8kGjQw1TQKBgQDVcgScp6f0PBdgt/k6wmqew/2BJGa4mzCW
+      dq5yXbYKDlGXzcbhwyZcJsxcj1Y/lZMww6S+ORuJ6v0NpcohfdQx8yfktQLKsfam
+      EtBsEdAYbGbgR4viyOdd4j83boqUJGHJTevKj49QwujSKhGJt+BicUT05rECdkYH
+      zmqHWdZQNwKBgQCttZQiZnE6BxebpboLGsi03Gvt3ABwGuvWXx4LgpBQcXo/4k9i
+      p7rCSkb+zVXXdXcpPGROuFCRIDak3qWmvAVAD/PiZ60/ku7QQtGHedhYCsP0AyMF
+      xOXrlG6JMOsMUQKkv8mfiavDhDiRiirjNpsZFV1xoXQFQFsDg+DCjgoAGQKBgQCa
+      mNbWUGjJ8axNFXOjJ6XqELLQkvkDxQPQN23q0A1GA1D9zsG6S4rBPCjQ8dDahQ/z
+      RgFQ9jQIFPfspqRc1bKX6zJ96M142qV3bDEh1VUQG5P35lpfjHxn97MqBxrAagmZ
+      sKKUOJ7pNANGFcpWIaSYKMp1R5H14oyeotdt6ZfcyQKBgFedekATlUlWr9bx/EAB
+      fMb1soZf3g2WL2e2g1G/tYfkrl4o+7QKig2kRKiAW5Af0FLA3s2pX3TtyJLe3v3/
+      Miy/giJ+QJ3uJVKRFwYT8l4sJacAlWLFA1QlWStdIC3LE1DDNPXWPshrmJuxEr3l
+      Qa4yuYhu0gfgws0OxOJA7Wd6
+      -----END PRIVATE KEY-----
+    client_email: firebase-adminsdk-ar1ar@jeffrey-197808.iam.gserviceaccount.com
+    client_id: 106210985192678803707
+    auth_uri: https://accounts.google.com/o/oauth2/auth
+    token_uri: https://oauth2.googleapis.com/token
+    auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+    client_x509_cert_url: https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ar1ar%40jeffrey-197808.iam.gserviceaccount.com
