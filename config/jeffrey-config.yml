@@ -6,6 +6,9 @@ app:
   name: Jeffrey
 google:
   projectId: jeffrey-197808
+mailjet:
+  apikeyPulic: 46ef8cb8899faa90e8da7b30c1db71cf
+  apikeyPrivate: cf9c2960b0d0510efda093851fe85ba0
 mailgun:
   apiBaseURL: https://api.mailgun.net/v3/prestine.io
   apiKey: key-4uxc32rva7pgw0ia1blpcmgjjznh3y82
