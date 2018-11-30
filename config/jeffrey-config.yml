@@ -28,8 +28,11 @@ raven:
 apple:
   sharedSecret: bbe075053b99438ba7d5bd6c6f100575
 stripe:
-  secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
-  webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
+  test:
+    secretKey: sk_test_UPFDKPIe8wuCwKdCwikNMWzs
+  production:
+    secretKey: sk_live_bH25ogaYB5Q2ZTdDKf2MH0MH
+    webhookSecret: whsec_wOrGsDVKURYNt4Cr5YOp9GlzF8tYSHS8
 paypal:
   clientId: ARhA2IWOJfLJrtNzNQXLoK7KqGpAl7sCPYel9RczCxFFXGAQSOwmyKFtctmcEkiwEOfQHJLxp-VzbztY
   clientSecret: EE5y_JaJZ9snRjk9jLEeOlT1gCBc7aO8_cUd2Ph8q7GxhjNJkwTW3BkWeDlhY0clJV65fINA5oZi4B6i
