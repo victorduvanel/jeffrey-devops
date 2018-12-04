@@ -36,17 +36,22 @@ spec:
     spec:
       containers:
         - name: forest
-          image: eu.gcr.io/jeffrey-197808/forest:0.3
+          image: eu.gcr.io/jeffrey-197808/forest:0.4
           ports:
             - containerPort: 3000
               name: http
-          # The following environment variables will contain the database host,
-          # user and password to connect to the PostgreSQL instance.
+          volumeMounts:
+            - name: google-cloud-key
+              mountPath: /var/secrets/google
           env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/google/key.json
+            - name: NODE_ENV
+              value: production
             - name: FOREST_ENV_SECRET
-              value: a5eec441a9948b783803cdca9914f32355f5310ba92364c75579ab2aebec62ab
+              value: f550cc6440a3b7ffc379399b5ca40634ced8152f0277367ab07dc7b310cb3b92
             - name: FOREST_AUTH_SECRET
-              value: 7ByottsyDFLsL3DbKjoI6oLE5at0aomw
+              value: t8A03GmdLp1Pklw0FuEKJebkNHBDpncs
             - name: DATABASE_URL
               value: postgres://proxyuser:MswMfPSs@127.0.0.1:5432/jeffrey
             - name: PORT
@@ -76,6 +81,9 @@ spec:
         # [END proxy_container]
       # [START volumes]
       volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: forest-api-key
         - name: cloudsql-instance-credentials
           secret:
             secretName: cloudsql-instance-credentials

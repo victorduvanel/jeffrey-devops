@@ -10,6 +10,8 @@ kubectl create secret generic jeffrey-api-key --from-file=key.json=./config/jeff
 kubectl create secret generic elchaouch-api-config --from-file=config.yml=./config/elchaouch-config.yml
 kubectl create secret generic elchaouch-api-key --from-file=key.json=./config/jeffrey-api.json
 
+kubectl create secret generic forest-api-key --from-file=key.json=./config/forest-api.json
+
 kubectl apply -f redis-master-deployment.yaml
 kubectl apply -f redis-master-service.yaml
 kubectl apply -f jeffrey.yaml
