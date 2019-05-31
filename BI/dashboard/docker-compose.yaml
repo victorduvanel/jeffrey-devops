@@ -1,0 +1,44 @@
+version: "3"
+services:
+
+  kafka:
+    image: spotify/kafka
+    hostname: kafka
+    container_name: kafka
+    volumes:
+      - ./storage/kafka/kafka-logs:/tmp/kafka-logs
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+    environment:
+      ADVERTISED_HOST: kafka
+      ADVERTISED_PORT: 9092
+      LOG_RETENTION_HOURS: 1440
+
+  graphite:
+    image: sitespeedio/graphite
+    ports:
+      - "2003:2003"
+      - "2004:2004"
+      - "8080:80"
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./storage/grafana:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    links:
+      - graphite
+
+  kafka2graphite:
+    build: ./kafka2graphite
+    links:
+      - kafka
+      - graphite
+    environment:
+      KAFKA_HOST: kafka:9092
+      KAFKA_TOPIC: t
+      KAFKA_PARTITION: 0
+      GRAPHITE_CLIENT: plaintext://graphite:2003/
+
