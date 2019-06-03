@@ -2,6 +2,7 @@ version: "3"
 services:
 
   kafka:
+    restart: always
     image: spotify/kafka
     hostname: jeffrey.reptilians.io
     container_name: jeffrey.reptilians.io
@@ -16,6 +17,7 @@ services:
       LOG_RETENTION_HOURS: 1440
 
   graphite:
+    restart: always
     image: sitespeedio/graphite
     # ports:
     #   - "2003:2003"
@@ -23,6 +25,7 @@ services:
     #   - "8080:80"
 
   grafana:
+    restart: always
     image: grafana/grafana
     volumes:
       - ./storage/grafana:/var/lib/grafana
@@ -33,6 +36,7 @@ services:
       - graphite
 
   kafka2graphite:
+    restart: always
     build: ./kafka2graphite
     links:
       - kafka
